@@ -1,0 +1,17 @@
+{
+  "name": "debug-timer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test",
+    "gulp": "gulp"
+  },
+  "author": "Matt Young (mashu.daishi@gmail.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-mocha": "3.0.1",
+    "should": "11.1.2"
+  }
+}
