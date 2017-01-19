@@ -16,6 +16,7 @@ debugTimer.addEvent( 'title' );
 debugTimer.addEvent( 'another title', { 'whatever' : 'you would like' } );
 debugTimer.events;
 //=> [ { 'title' : 'title' }, { 'title' : 'another title', 'optionalData' : { 'whatever' : 'you would like' } } ]
+```
 
 ## License
 
