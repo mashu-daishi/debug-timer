@@ -3,9 +3,9 @@
 ## Usage
 
 ```js
-const DebugTimer = require( 'debug-timer' );
+const TimerLite = require( 'timer-lite' );
 
-let debugTimer = new DebugTimer();
+let debugTimer = new TimerLite();
 
 debugTimer.startTime = //epoch time
 
