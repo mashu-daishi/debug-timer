@@ -2,17 +2,18 @@
 
 require( 'should' );
 
-let timer = require( '../index' );
+const sinon = require( 'sinon' );
+const Timer = require( '../index' );
 
 describe( 'Timer', () => {
 	describe( 'Basic', () => {
 		let timerPrime, timerDelta;
 
 		before( function ( done ) {
-			timerPrime = new timer();
+			timerPrime = new Timer();
 
 			setTimeout(function () {
-		        timerDelta = new timer();
+		        timerDelta = new Timer();
 		        done();
 		    }, 100);
 		} );
@@ -31,13 +32,40 @@ describe( 'Timer', () => {
 		} );
 	} );
 
+	describe( 'showEvents', () => {
+		let spy, timerPrime;
+
+		before( () => {
+			spy = sinon.spy( console, 'log' );
+		} );
+
+		before( function ( done ) {
+			timerPrime = new Timer();
+
+			setTimeout(function () {
+				timerPrime.addEvent( 'Testinging showEvents' );
+				
+				timerPrime.showEvents();
+				done();
+			}, 100);			
+		} );
+
+		after( () => {
+			console.log.restore();
+		} );
+
+		it( '-- should print information', () => {
+			console.log.calledWith( 'Showing Timer Events' ).should.equal( true );
+		} );
+	} );
+
 	describe( 'Events', () => {
 		let testTimer, optionalData;
 
 		optionalData = { 'key' : 'value' };
 
 		before( function ( done ) {
-			testTimer = new timer();
+			testTimer = new Timer();
 
 			setTimeout(function () {
 		        testTimer.addEvent( 'This is the first event' )

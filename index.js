@@ -1,1 +1,1 @@
-module.exports = require( './lib/timer' );
+module.exports = require( './lib/Timer' );
