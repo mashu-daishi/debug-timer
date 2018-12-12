@@ -1,6 +1,6 @@
 {
   "name": "timer-lite",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A (hopefully) lite timer to help with debugging. Allows for user-provided tags and a final output of time between events.",
   "main": "index.js",
   "repository": {
