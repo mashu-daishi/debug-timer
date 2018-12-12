@@ -44,10 +44,10 @@ describe( 'Timer', () => {
 
 			setTimeout(function () {
 				timerPrime.addEvent( 'Testinging showEvents' );
-				
+
 				timerPrime.showEvents();
 				done();
-			}, 100);			
+			}, 100);
 		} );
 
 		after( () => {
@@ -98,6 +98,24 @@ describe( 'Timer', () => {
 					testTimer.events[ 1 ].should.have.property( 'optionalData' ).and.equal( optionalData );
 				} );
 			} );
+		} );
+	} );
+
+	describe( 'Unique IDs', () => {
+		let timer1, timer2;
+
+		before( () => {
+			timer1 = new Timer();
+			timer2 = new Timer();
+		} );
+
+		it( '-- should have ids', () => {
+			timer1.should.have.property( 'id' ).and.not.be.null();
+			timer2.should.have.property( 'id' ).and.not.be.null();
+		} );
+
+		it( '-- should have unique ids', () => {
+			timer1.should.have.property( 'id' ).and.not.equal( timer2.id );
 		} );
 	} );
 } );
